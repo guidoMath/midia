@@ -1,0 +1,38 @@
+[
+ {
+  "dia": "2026-11-18",
+  "hora": "12:00",
+  "id_produto": 23594149969,
+  "video": "acha/2026-11-18/12h-caixas.mp4",
+  "legenda": "O link tá no canal @achamundi do Telegram. (publi)\n\nKit com 5 caixas organizadoras com tampa, de 2 a 17 litros, segundo o anúncio.\n\n▪️ Kit 5 caixas organizadoras: com tampa, de 2 a 17 litros.\n\n💰 Kit 5 caixas organizadoras com tampa: R$ 76,43 em 18/11/2026 (pode mudar, confere no link).\n\nO que você guardaria primeiro?\n\n#achadinhos #achados #organizacao #casa\n\nVídeo feito com IA.\n",
+  "preco_min": 76.43,
+  "preco_max": 76.43,
+  "nome_tg": "Kit 5 caixas organizadoras com tampa",
+  "link": "https://s.shopee.com.br/6VPVXGDXjO",
+  "experimento": "E2-A controle: gancho pergunta-dor, modelo 02, preço no produto"
+ },
+ {
+  "dia": "2026-11-18",
+  "hora": "19:00",
+  "id_produto": 23099315787,
+  "video": "acha/2026-11-18/19h-porta-chaves.mp4",
+  "legenda": "O link tá no canal @achamundi do Telegram. (publi)\n\nPorta-chaves com prateleira e suporte, em MDF, segundo o anúncio.\n\n▪️ Porta-chaves: prateleira e suporte, em MDF.\n\n💰 Porta-chaves com prateleira: a partir de R$ 21,90 em 18/11/2026 (pode mudar, confere no link).\n\nVocê também vive procurando a chave?\n\n#achadinhos #achados #casa #organizacao\n\nVídeo feito com IA.\n",
+  "preco_min": 21.9,
+  "preco_max": 31.9,
+  "nome_tg": "Porta-chaves com prateleira",
+  "link": "https://s.shopee.com.br/AUveIebW93",
+  "experimento": "E2-B gancho afirmação de benefício (resto igual ao controle)"
+ },
+ {
+  "dia": "2026-11-18",
+  "hora": "21:00",
+  "id_produto": 23094285163,
+  "video": "acha/2026-11-18/21h-prateleira.mp4",
+  "legenda": "O link tá no canal @achamundi do Telegram. (publi)\n\nPrateleira de banheiro de alumínio, sem furo, segundo o anúncio.\n\n▪️ Prateleira de alumínio: banheiro, sem furo.\n\n💰 Prateleira de alumínio sem furo: a partir de R$ 18,98 em 18/11/2026 (pode mudar, confere no link).\n\nFurar a parede ou não furar?\n\n#achadinhos #achados #banheiro #organizacao\n\nVídeo feito com IA.\n",
+  "preco_min": 18.98,
+  "preco_max": 37.98,
+  "nome_tg": "Prateleira de banheiro de alumínio, sem furo",
+  "link": "https://s.shopee.com.br/5fqOXm6hlS",
+  "experimento": "E2-C abertura em cartão de texto, modelo 03 (resto igual ao controle)"
+ }
+]
