@@ -30,7 +30,7 @@ reais = lambda v: "R$ " + f"{v:,.2f}".replace(",", "X").replace(".", ",").replac
 d = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-3))).strftime("%d/%m")
 texto = f"{m['nome_tg']}\n\n💰 {'a partir de ' if pmax > pmin else ''}{reais(pmin)} em {d} (pode mudar, confere no link)\n\n👉 {m['link']}\n\n(publi)"
 subprocess.run(["curl", "-sSf", "-o", "/tmp/v.mp4", RAW + m.get("video_tg", m["video"])])  # Telegram: versão sem a tela "Link no Telegram"
-t = subprocess.run(["curl", "-sS", "-F", "chat_id=@achamundi", "--form-string", "caption=" + texto, "-F", "supports_streaming=true",
+t = subprocess.run(["curl", "-sS", "--form-string", "chat_id=@achamundi", "--form-string", "caption=" + texto, "-F", "supports_streaming=true",
                     "-F", "video=@/tmp/v.mp4", f"https://api.telegram.org/bot{tg}/sendVideo"], capture_output=True, text=True).stdout
 ok_tg = json.loads(t or "{}").get("ok")
 if not igual:
