@@ -1,6 +1,19 @@
 [
  {
   "dia": "2026-11-18",
+  "hora": "10:15",
+  "id_produto": 58208059794,
+  "video": "acha/2026-11-18/10h-organizadores.mp4",
+  "legenda": "O link tá no canal @achamundi do Telegram. (publi)\n\nKit com 2 organizadores empilháveis de aço aramado pra armário de cozinha e louças, segundo o anúncio.\n\n▪️ Kit 2 organizadores empilháveis: aço aramado, multiuso.\n\nQual armário seu precisa de mais um andar?\n\n#achadinhos #achados #cozinha #organizacao\n\nVídeo feito com IA.\n",
+  "preco_min": 45.0,
+  "preco_max": 45.0,
+  "nome_tg": "Kit 2 organizadores empilháveis pra armário",
+  "link": "https://s.shopee.com.br/1W0qRrs8aS",
+  "experimento": "E3-A storyboard (problema, uso, resultado) + preço dígito a dígito, dos centavos pras dezenas; publicado às 10h15 a pedido do Matheus",
+  "video_tg": "acha/2026-11-18/tg-10h-organizadores.mp4"
+ },
+ {
+  "dia": "2026-11-18",
   "hora": "12:00",
   "id_produto": 23594149969,
   "video": "acha/2026-11-18/12h-caixas.mp4",
@@ -11,19 +24,6 @@
   "link": "https://s.shopee.com.br/6VPVXGDXjO",
   "experimento": "E2-A controle: gancho pergunta-dor, modelo 02, preço no produto",
   "video_tg": "acha/2026-11-18/tg-12h-caixas.mp4"
- },
- {
-  "dia": "2026-11-18",
-  "hora": "19:00",
-  "id_produto": 58208059794,
-  "video": "acha/2026-11-18/19h-organizadores.mp4",
-  "legenda": "O link tá no canal @achamundi do Telegram. (publi)\n\nKit com 2 organizadores empilháveis de aço aramado pra armário de cozinha e louças, segundo o anúncio.\n\n▪️ Kit 2 organizadores empilháveis: aço aramado, multiuso.\n\nQual armário seu precisa de mais um andar?\n\n#achadinhos #achados #cozinha #organizacao\n\nVídeo feito com IA.\n",
-  "preco_min": 45.0,
-  "preco_max": 45.0,
-  "nome_tg": "Kit 2 organizadores empilháveis pra armário",
-  "link": "https://s.shopee.com.br/1W0qRrs8aS",
-  "experimento": "E3-A storyboard (problema, uso, resultado) + preço em etiqueta que cresce",
-  "video_tg": "acha/2026-11-18/tg-19h-organizadores.mp4"
  },
  {
   "dia": "2026-11-18",
