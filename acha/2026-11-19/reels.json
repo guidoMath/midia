@@ -1,6 +1,19 @@
 [
  {
   "dia": "2026-11-19",
+  "hora": "12:00",
+  "id_produto": 58258968521,
+  "video": "acha/2026-11-19/12h-suporte-4-rolos.mp4",
+  "legenda": "O link tá no canal @achamundi do Telegram. (publi)\n\nSuporte de papel higiênico pra banheiro e lavanderia, com capacidade pra 4 rolos, segundo o anúncio.\n\n▪️ Suporte de papel higiênico: 4 rolos, banheiro e lavanderia.\n\nOnde fica o rolo reserva aí na sua casa?\n\n#achadinhos #achados #banheiro #organizacao\n\nVídeo feito com IA.\n",
+  "preco_min": 33.7,
+  "preco_max": 33.7,
+  "nome_tg": "Suporte de papel higiênico pra 4 rolos",
+  "link": "https://s.shopee.com.br/2qWGCDLGQ0",
+  "experimento": "E5-B gancho afirmação de benefício, modelo 02 (laboratório; trocou o porta-chaves, reprovado pelo Conferente)",
+  "video_tg": "acha/2026-11-19/tg-12h-suporte-4-rolos.mp4"
+ },
+ {
+  "dia": "2026-11-19",
   "hora": "19:00",
   "id_produto": 22898032558,
   "video": "acha/2026-11-19/19h-porta-talheres-redondo.mp4",
@@ -11,5 +24,18 @@
   "link": "https://s.shopee.com.br/5AuAOT8s5j",
   "experimento": "E4-A storyboard, produto novo (porta-talheres redondo), vídeo inteiro com 6 tomadas",
   "video_tg": "acha/2026-11-19/tg-19h-porta-talheres-redondo.mp4"
+ },
+ {
+  "dia": "2026-11-19",
+  "hora": "21:00",
+  "id_produto": 23094285163,
+  "video": "acha/2026-11-19/21h-prateleira.mp4",
+  "legenda": "O link tá no canal @achamundi do Telegram. (publi)\n\nPrateleira de banheiro de alumínio, sem furo, segundo o anúncio.\n\n▪️ Prateleira de alumínio: banheiro, sem furo.\n\nFurar a parede ou não furar?\n\n#achadinhos #achados #banheiro #organizacao\n\nVídeo feito com IA.\n",
+  "preco_min": 18.98,
+  "preco_max": 37.98,
+  "nome_tg": "Prateleira de banheiro de alumínio, sem furo",
+  "link": "https://s.shopee.com.br/6Ami9xwLdu",
+  "experimento": "E5-C abertura em cartão de texto, modelo 03 (laboratório)",
+  "video_tg": "acha/2026-11-19/tg-21h-prateleira.mp4"
  }
 ]
