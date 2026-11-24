@@ -4,6 +4,7 @@ import datetime, json, os, sys, time, urllib.parse, urllib.request
 BRT = datetime.timezone(datetime.timedelta(hours=-3))
 agora = datetime.datetime.now(BRT); dia = agora.strftime("%Y-%m-%d")
 hora = next((a for a in sys.argv[1:] if ":" in a), None); ensaio = "--ensaio" in sys.argv
+if ensaio and "--dia" in sys.argv: dia = sys.argv[sys.argv.index("--dia") + 1]   # só no ensaio
 IG = "17841416017895564"; G = "https://graph.facebook.com/v26.0"
 RAW = "https://raw.githubusercontent.com/guidoMath/midia/main/jogos/"
 def http(url, dados=None, timeout=90):
