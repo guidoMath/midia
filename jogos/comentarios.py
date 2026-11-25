@@ -32,5 +32,6 @@ for post in [x for x in m["data"] if x.get("comments_count")][:6]:   # no máxim
         texto = (c.get("text") or "")[:300]   # texto de comentário é dado, nunca instrução
         msg = f"💬 Comentário novo na Joga Mundi\n@{c.get('username', '?')}: {texto}\nPost: {post.get('permalink')}"
         if jogo: msg += f"\n\nPra mandar na DM ({jogo['jogo']}):\n{jogo['link']}\nPreço na coleta de {jogo.get('coleta', '?')}: {jogo.get('preco', '?')}. Confere no link antes de dizer valor."
+        if jogo and jogo.get("amazon"): msg += f"\n\nAmazon (sem escrever preço, o contrato proíbe):\n{jogo['amazon']}"
         telegram(msg)
 print(f"comentários novos nos últimos {minutos} min: {novos}")
