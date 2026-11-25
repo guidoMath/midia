@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joga Mundi: links dos jogos</title>
+<meta name="description" content="Os jogos de tabuleiro que apareceram na Joga Mundi e onde comprar.">
+<style>
+  :root { --bg:#f6efe2; --card:#fffaf0; --fg:#2b2118; --mut:#7a6a58; --line:#e2d5bf; --a:#e9a713; --b:#2b2118; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1d1813; --card:#2a231c; --fg:#f4ead9; --mut:#b5a48e; --line:#43382c; --b:#f4ead9; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:520px; margin:0 auto; padding:28px 16px 40px; }
+  header { text-align:center; margin-bottom:22px; }
+  header img { width:84px; height:84px; border-radius:50%; border:3px solid var(--a); }
+  h1 { font-size:22px; margin:10px 0 2px; }
+  header p { margin:0; color:var(--mut); font-size:14.5px; }
+  .publi { display:inline-block; margin-top:10px; font-size:12.5px; border:1px solid var(--line); border-radius:999px; padding:2px 12px; color:var(--mut); }
+  .jogo { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; margin:12px 0; }
+  .jogo h2 { font-size:17px; margin:0 0 10px; }
+  .lojas { display:flex; gap:8px; flex-wrap:wrap; }
+  .lojas a { flex:1 1 120px; text-align:center; text-decoration:none; font-weight:600; font-size:14.5px; padding:11px 10px; border-radius:10px; color:#2b2118; background:var(--a); }
+  .lojas a.sec { background:transparent; color:var(--b); border:1.5px solid var(--b); }
+  .lojas a:focus-visible { outline:3px solid var(--fg); outline-offset:2px; }
+  footer { margin-top:26px; color:var(--mut); font-size:12.5px; text-align:center; }
+  footer p { margin:8px 0; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="perfil.png" alt="Peão amarelo de papel, símbolo da Joga Mundi" width="84" height="84">
+    <h1>Joga Mundi</h1>
+    <p>Os jogos que apareceram nos vídeos e onde comprar.</p>
+    <span class="publi">Contém publi: links de afiliado</span>
+  </header>
+  <section id="lista" aria-live="polite"><p style="text-align:center;color:var(--mut)">Carregando os jogos…</p></section>
+  <footer>
+    <p>O preço e o estoque são os da loja na hora da compra. Confira a edição antes de fechar o pedido.</p>
+    <p>Como participante do Programa de Associados da Amazon, sou remunerado pelas compras qualificadas efetuadas.</p>
+    <p><a href="https://www.instagram.com/joga.mundi" style="color:inherit">@joga.mundi no Instagram</a></p>
+  </footer>
+</main>
+<script>
+  const el = (t, a = {}, txt) => { const e = document.createElement(t); for (const k in a) e.setAttribute(k, a[k]); if (txt) e.textContent = txt; return e; };
+  const seguro = u => typeof u === "string" && /^https:\/\//.test(u);
+  fetch("links.json?t=" + Date.now()).then(r => r.json()).then(d => {
+    const lista = document.getElementById("lista"); lista.textContent = "";
+    for (const j of d.jogos || []) {
+      const lojas = [["Shopee", j.link], ["Amazon", j.amazon], ["Mercado Livre", j.ml]].filter(l => seguro(l[1]));
+      if (!lojas.length) continue;
+      const card = el("article", { class: "jogo" }); card.append(el("h2", {}, j.jogo));
+      const linha = el("div", { class: "lojas" });
+      lojas.forEach(([nome, url], i) => linha.append(el("a", { href: url, rel: "sponsored noopener", target: "_blank", class: i ? "sec" : "" }, "Ver na " + (nome === "Mercado Livre" ? "Mercado Livre" : nome))));
+      card.append(linha); lista.append(card);
+    }
+    if (!lista.children.length) lista.append(el("p", {}, "Nenhum jogo na lista agora. Volte mais tarde."));
+  }).catch(() => { document.getElementById("lista").textContent = "Não deu pra carregar a lista. Tente de novo em instantes."; });
+</script>
+</body>
+</html>
