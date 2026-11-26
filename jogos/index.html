@@ -16,12 +16,21 @@
   h1 { font-size:22px; margin:10px 0 2px; }
   header p { margin:0; color:var(--mut); font-size:14.5px; }
   .publi { display:inline-block; margin-top:10px; font-size:12.5px; border:1px solid var(--line); border-radius:999px; padding:2px 12px; color:var(--mut); }
-  .jogo { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; margin:12px 0; }
-  .jogo h2 { font-size:17px; margin:0 0 10px; }
-  .lojas { display:flex; gap:8px; flex-wrap:wrap; }
-  .lojas a { flex:1 1 120px; text-align:center; text-decoration:none; font-weight:600; font-size:14.5px; padding:11px 10px; border-radius:10px; color:#2b2118; background:var(--a); }
+  .jogo { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:11px; margin:11px 0; display:flex; gap:12px; align-items:center; }
+  .jogo .ft { width:96px; height:96px; flex:none; border-radius:10px; background:#fff; object-fit:contain; border:1px solid var(--line); }
+  .jogo .tx { flex:1; min-width:0; }
+  .jogo h2 { font-size:17px; margin:0 0 9px; }
+  .lojas { display:flex; gap:7px; flex-wrap:wrap; }
+  .lojas a { flex:1 1 84px; text-align:center; text-decoration:none; font-weight:700; font-size:14px; padding:10px 6px; border-radius:10px; color:#2b2118; background:var(--a); }
   .lojas a.sec { background:transparent; color:var(--b); border:1.5px solid var(--b); }
   .lojas a:focus-visible { outline:3px solid var(--fg); outline-offset:2px; }
+  .dest { position:relative; border-radius:16px; overflow:hidden; margin:0 0 16px; background:#3a2a1c; aspect-ratio:4/3; }
+  .dest img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 28%; }
+  .dest .et { position:absolute; left:12px; top:12px; background:var(--a); color:#2b2118; font-weight:800; font-size:12.5px; letter-spacing:.03em; padding:4px 10px; border-radius:6px; }
+  .dest .bx { position:absolute; left:0; right:0; bottom:0; padding:38px 12px 12px; background:linear-gradient(transparent, rgba(0,0,0,.82)); }
+  .dest h2 { margin:0 0 9px; font-size:21px; color:#fff; }
+  .dest .lojas a.sec { color:#fff; border-color:#fff; }
+  h3.sec { font-size:13px; text-transform:uppercase; letter-spacing:.07em; color:var(--mut); margin:18px 2px 0; }
   footer { margin-top:26px; color:var(--mut); font-size:12.5px; text-align:center; }
   footer p { margin:8px 0; }
 </style>
@@ -44,17 +53,34 @@
 <script>
   const el = (t, a = {}, txt) => { const e = document.createElement(t); for (const k in a) e.setAttribute(k, a[k]); if (txt) e.textContent = txt; return e; };
   const seguro = u => typeof u === "string" && /^https:\/\//.test(u);
-  fetch("links.json?t=" + Date.now()).then(r => r.json()).then(d => {
+  const local = u => typeof u === "string" && /^[a-z0-9\-\/]+\.(jpg|png)$/.test(u);
+  const botoes = j => { const d = el("div", { class: "lojas" });
+    [["Shopee", j.link], ["Amazon", j.amazon], ["Mercado Livre", j.ml]].filter(l => seguro(l[1])).forEach(([n, u], i) =>
+      d.append(el("a", { href: u, rel: "sponsored noopener", target: "_blank", class: i ? "sec" : "" }, n)));
+    return d; };
+  const pega = u => fetch(u + "?t=" + Date.now()).then(r => r.json());
+  Promise.all([pega("links.json"), pega("fila.json").catch(() => ({ posts: [] }))]).then(([d, f]) => {
     const lista = document.getElementById("lista"); lista.textContent = "";
-    for (const j of d.jogos || []) {
-      const lojas = [["Shopee", j.link], ["Amazon", j.amazon], ["Mercado Livre", j.ml]].filter(l => seguro(l[1]));
-      if (!lojas.length) continue;
-      const card = el("article", { class: "jogo" }); card.append(el("h2", {}, j.jogo));
-      const linha = el("div", { class: "lojas" });
-      lojas.forEach(([nome, url], i) => linha.append(el("a", { href: url, rel: "sponsored noopener", target: "_blank", class: i ? "sec" : "" }, "Ver na " + (nome === "Mercado Livre" ? "Mercado Livre" : nome))));
-      card.append(linha); lista.append(card);
+    const jogos = (d.jogos || []).filter(j => seguro(j.link) || seguro(j.amazon) || seguro(j.ml));
+    // destaque: o jogo do último vídeo que já foi ao ar, com a capa do Reel
+    const agora = Date.now();
+    const ja = (f.posts || []).filter(p => new Date(p.data + "T" + p.hora + ":00-03:00").getTime() <= agora)
+      .sort((a, b) => (a.data + a.hora < b.data + b.hora ? 1 : -1))[0];
+    const ult = ja || f.ultimo;
+    const dj = ult && jogos.find(j => j.jogo === ult.jogo);
+    if (dj && local(ult.pasta + "/capa.jpg")) {
+      const c = el("section", { class: "dest" });
+      const im = el("img", { src: ult.pasta + "/capa.jpg", alt: "Cena do vídeo de " + dj.jogo }); im.onerror = () => c.remove();
+      const bx = el("div", { class: "bx" }); bx.append(el("h2", {}, dj.jogo), botoes(dj));
+      c.append(im, el("span", { class: "et" }, "DO ÚLTIMO VÍDEO"), bx); lista.append(c);
+      lista.append(el("h3", { class: "sec" }, "Todos os jogos"));
     }
-    if (!lista.children.length) lista.append(el("p", {}, "Nenhum jogo na lista agora. Volte mais tarde."));
+    for (const j of jogos) {
+      const card = el("article", { class: "jogo" });
+      if (local(j.foto)) { const im = el("img", { class: "ft", src: j.foto, alt: "Caixa do jogo " + j.jogo, loading: "lazy" }); im.onerror = () => im.remove(); card.append(im); }
+      const tx = el("div", { class: "tx" }); tx.append(el("h2", {}, j.jogo), botoes(j)); card.append(tx); lista.append(card);
+    }
+    if (!jogos.length) lista.append(el("p", {}, "Nenhum jogo na lista agora. Volte mais tarde."));
   }).catch(() => { document.getElementById("lista").textContent = "Não deu pra carregar a lista. Tente de novo em instantes."; });
 </script>
 </body>

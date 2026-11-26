@@ -6,7 +6,8 @@
    "link": "https://s.shopee.com.br/9pg8hhQcay",
    "preco": "R$ 449,99",
    "coleta": "2026-11-24T19:38:26-03:00",
-   "amazon": "https://link.amazon/B0iLZxf4w"
+   "amazon": "https://link.amazon/B0iLZxf4w",
+   "foto": "caixas/ticket-to-ride.jpg"
   },
   {
    "jogo": "Carcassonne",
@@ -14,7 +15,8 @@
    "link": "https://s.shopee.com.br/8pnbWFpbJz",
    "preco": "R$ 279,51",
    "coleta": "2026-11-24T19:38:26-03:00",
-   "amazon": "https://link.amazon/B0eYnjLbE"
+   "amazon": "https://link.amazon/B0eYnjLbE",
+   "foto": "caixas/carcassonne.jpg"
   },
   {
    "jogo": "Catan",
@@ -22,7 +24,8 @@
    "link": "https://s.shopee.com.br/3B9ElqWgsQ",
    "preco": "R$ 329,99",
    "coleta": "2026-11-24T19:38:26-03:00",
-   "amazon": "https://link.amazon/B07dZWhU7"
+   "amazon": "https://link.amazon/B07dZWhU7",
+   "foto": "caixas/catan.jpg"
   },
   {
    "jogo": "Dobble",
@@ -30,7 +33,8 @@
    "link": "https://s.shopee.com.br/6L6Gc2UImr",
    "preco": "R$ 79,99",
    "coleta": "2026-11-24T19:38:26-03:00",
-   "amazon": "https://link.amazon/B09VlS4r0"
+   "amazon": "https://link.amazon/B09VlS4r0",
+   "foto": "caixas/dobble.jpg"
   },
   {
    "jogo": "War",
@@ -38,7 +42,8 @@
    "link": "https://s.shopee.com.br/2La7ulQa7o",
    "preco": "R$ 171,99",
    "coleta": "2026-11-24T19:38:26-03:00",
-   "amazon": "https://link.amazon/B00nadkqi"
+   "amazon": "https://link.amazon/B00nadkqi",
+   "foto": "caixas/war.jpg"
   },
   {
    "jogo": "Cara a Cara",
@@ -46,7 +51,8 @@
    "link": "https://s.shopee.com.br/1CDUl5el0",
    "preco": "R$ 97,00",
    "coleta": "2026-11-24T19:38:26-03:00",
-   "amazon": "https://link.amazon/B02tGp8b9"
+   "amazon": "https://link.amazon/B02tGp8b9",
+   "foto": "caixas/cara-a-cara.jpg"
   },
   {
    "jogo": "UNO",
@@ -54,7 +60,8 @@
    "link": "https://s.shopee.com.br/4VecsDKZ2I",
    "preco": "R$ 22,99",
    "coleta": "2026-11-24T19:38:26-03:00",
-   "amazon": "https://link.amazon/B0hdDzmZ5"
+   "amazon": "https://link.amazon/B0hdDzmZ5",
+   "foto": "caixas/uno.jpg"
   }
  ]
 }
