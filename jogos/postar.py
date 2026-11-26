@@ -30,7 +30,8 @@ if "(publi)" not in l1: sai("legenda sem (publi) na 1ª linha; não publiquei", 
 if any(t in leg.lower() for t in (" ia.", " ia ", "inteligência artificial")): sai("legenda fala de IA; não publiquei", True)
 ja = http(G + f"/{IG}/media?fields=caption,permalink&limit=15")
 if "data" not in ja: sai("não consegui ler a conta: " + json.dumps(ja)[:150], True)
-igual = next((m for m in ja["data"] if (m.get("caption") or "").strip().splitlines()[:1] == [l1]), None)
+norm = lambda t: " ".join((t or "").split())   # compara a legenda INTEIRA: dois vídeos do mesmo jogo têm a mesma 1ª linha
+igual = next((m for m in ja["data"] if norm(m.get("caption")) == norm(leg)), None)
 if igual: sai(f"{p['pasta']} já está publicado ({igual.get('permalink')}); nada a fazer")
 video = RAW + p["pasta"] + "/video.mp4"
 try:
