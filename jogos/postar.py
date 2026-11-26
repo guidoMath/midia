@@ -37,14 +37,27 @@ try:
     cod = urllib.request.urlopen(urllib.request.Request(video, method="HEAD"), timeout=60).status
 except Exception as e: cod = str(e)[:80]
 if cod != 200: sai(f"vídeo não responde ({cod}): {video}", True)
-if ensaio: print(f"[ENSAIO] publicaria {p['pasta']} em {dia} {hora}\n[ENSAIO] {video}\n[ENSAIO] legenda:\n{leg}"); sys.exit(0)
-c = http(G + f"/{IG}/media", urllib.parse.urlencode({"media_type": "REELS", "video_url": video, "caption": leg, "share_to_feed": "true"}).encode())
-if "id" not in c: sai("falhou ao criar o post: " + json.dumps(c)[:200], True)
-for _ in range(60):
-    time.sleep(8); s = http(G + f"/{c['id']}?fields=status_code,status")
-    if s.get("status_code") == "FINISHED": break
+capa = RAW + p["pasta"] + "/capa.jpg"   # capa é opcional: sem ela, ou se a Meta recusar, publica sem
+try:
+    if urllib.request.urlopen(urllib.request.Request(capa, method="HEAD"), timeout=60).status != 200: capa = None
+except Exception: capa = None
+if ensaio: print(f"[ENSAIO] publicaria {p['pasta']} em {dia} {hora}\n[ENSAIO] {video}\n[ENSAIO] capa: {capa}\n[ENSAIO] legenda:\n{leg}"); sys.exit(0)
+c = None
+for tentativa in ([capa, None] if capa else [None]):
+    campos = {"media_type": "REELS", "video_url": video, "caption": leg, "share_to_feed": "true"}
+    if tentativa: campos["cover_url"] = tentativa
+    c = http(G + f"/{IG}/media", urllib.parse.urlencode(campos).encode())
+    if "id" not in c:
+        if tentativa: print("com capa falhou ao criar; tentando sem capa: " + json.dumps(c)[:150]); continue
+        sai("falhou ao criar o post: " + json.dumps(c)[:200], True)
+    s = {}
+    for _ in range(60):
+        time.sleep(8); s = http(G + f"/{c['id']}?fields=status_code,status")
+        if s.get("status_code") in ("FINISHED", "ERROR"): break
+    if s.get("status_code") == "FINISHED": capa = tentativa; break
+    if s.get("status_code") == "ERROR" and tentativa: print("a Meta recusou com capa; tentando sem capa: " + json.dumps(s)[:150]); continue
     if s.get("status_code") == "ERROR": sai("a Meta recusou o vídeo: " + json.dumps(s)[:200], True)
-else: sai("o vídeo não ficou pronto em 8 minutos; não publiquei", True)
+    sai("o vídeo não ficou pronto em 8 minutos; não publiquei", True)
 pub = http(G + f"/{IG}/media_publish", urllib.parse.urlencode({"creation_id": c["id"]}).encode())
 if "id" not in pub: sai("falhou ao publicar: " + json.dumps(pub)[:200], True)
 link = http(G + f"/{pub['id']}?fields=permalink").get("permalink", "")
