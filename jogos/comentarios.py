@@ -24,7 +24,8 @@ novos = 0
 for post in [x for x in m["data"] if x.get("comments_count")][:6]:   # no máximo 6 chamadas por rodada
     cs = http(G + f"/{post['id']}/comments?fields=text,username,timestamp&limit=50")
     cap = (post.get("caption") or "").upper()
-    jogo = next((j for j in jogos if j["palavra"].upper() in cap.splitlines()[0] if cap), None)
+    # a palavra mais comprida ganha: "NO MERCY" antes de "UNO" numa legenda "UNO NO MERCY: ..."
+    jogo = next((j for j in sorted(jogos, key=lambda j: -len(j["palavra"])) if cap and j["palavra"].upper() in cap.splitlines()[0]), None)
     for c in cs.get("data", []):
         quando = datetime.datetime.strptime(c["timestamp"], "%Y-%m-%dT%H:%M:%S%z")
         if quando < corte: continue

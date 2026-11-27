@@ -1,22 +1,15 @@
 {
  "posts": [
   {
-   "data": "2026-11-26",
-   "hora": "18:10",
-   "pasta": "uno-no-mercy-a",
+   "data": "2026-11-27",
+   "hora": "12:10",
+   "pasta": "uno-no-mercy-b",
    "jogo": "UNO No Mercy",
-   "legenda": "Comenta NO MERCY que eu te mando o link (publi)\nOs links das lojas estão na bio.\nÉ o UNO que você já conhece, com regras bem mais pesadas: aqui o castigo volta. Levou um +4? Responde com +6, e a conta passa pro outro.\nE tem limite: quem chega a 25 cartas ou mais na mão sai do jogo.\nDe 2 a 6 jogadores.\nVocê empilhava ou comprava quieto?\n#uno #unonomercy #jogodecartas #jogosdemesa #noitedejogos #boardgamebrasil"
-  },
-  {
-   "data": "2026-11-26",
-   "hora": "20:40",
-   "pasta": "carcassonne-a",
-   "jogo": "Carcassonne",
-   "legenda": "Comenta CARCASSONNE que eu te mando o link (publi)\nOs links das lojas estão na bio.\nNo Carcassonne cada um compra uma peça por vez e encaixa no mapa, que nasce diferente em toda partida.\nCidade fechada dá ponto na hora. E dá pra entrar de lado na cidade do amigo pra pontuar junto.\nDe 2 a 5 jogadores.\nVocê entraria na cidade do seu amigo ou fecharia a sua sozinho?\n#carcassonne #jogodetabuleiro #boardgame #jogosdetabuleiro #boardgamesbrasil #noitedejogos"
+   "legenda": "UNO NO MERCY: links das lojas na bio (publi)\nTem carta que faz você descartar de uma vez todas as cartas da mesma cor dela.\nE aqui ela pode salvar, porque com 25 cartas ou mais na mão você sai do jogo.\nJá ficou com mais de 20 cartas na mão?\n#uno #unonomercy #jogodecartas #jogosdemesa #noitedejogos #boardgamebrasil"
   },
   {
    "data": "2026-11-27",
-   "hora": "12:10",
+   "hora": "18:10",
    "pasta": "catan-c",
    "jogo": "Catan",
    "legenda": "Comenta CATAN que eu te mando o link (publi)\nOs links das lojas estão na bio.\nNo Catan cada um monta sua parte da ilha: rola os dados, recebe recurso, constrói e negocia.\nE quando sai 7, o ladrão trava um hexágono e quem rolou puxa uma carta de quem está ali.\nVence quem chega primeiro a 10 pontos.\nQual dói mais: perder a carta ou ver seu 8 travado?\n#catan #jogodetabuleiro #boardgame #jogosdetabuleiro #noitedejogos"
@@ -30,7 +23,7 @@
   }
  ],
  "ultimo": {
-  "pasta": "cara-a-cara-a",
-  "jogo": "Cara a Cara"
+  "pasta": "carcassonne-a",
+  "jogo": "Carcassonne"
  }
 }
