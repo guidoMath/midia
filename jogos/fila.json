@@ -2,13 +2,6 @@
  "posts": [
   {
    "data": "2026-11-28",
-   "hora": "09:00",
-   "pasta": "uno-no-mercy-c",
-   "jogo": "UNO No Mercy",
-   "legenda": "UNO NO MERCY: links das lojas na bio (publi)\nTem um curinga em que quem leva escolhe a cor e vai virando o monte até ela aparecer. Fica com todas que virou.\nE curinga que sai no meio não serve: continua virando.\nQue cor você escolheria?\n#uno #unonomercy #jogodecartas #jogosdemesa #noitedejogos #boardgamebrasil"
-  },
-  {
-   "data": "2026-11-28",
    "hora": "12:10",
    "pasta": "cara-a-cara-b",
    "jogo": "Cara a Cara",
@@ -17,13 +10,20 @@
   {
    "data": "2026-11-28",
    "hora": "18:10",
+   "pasta": "dobble-c",
+   "jogo": "Dobble",
+   "legenda": "DOBBLE: links das lojas na bio (publi)\nEntre duas cartas quaisquer do Dobble sempre tem um desenho igual. Só um.\nDe 2 a 8 jogadores, todo mundo procura ao mesmo tempo, e a caixa traz mais de um jeito de jogar com as mesmas cartas.\nNa sua mesa, quem juraria que não tem?\n#dobble #spotit #jogodecartas #jogosdetabuleiro #noitedejogos #boardgamebrasil"
+  },
+  {
+   "data": "2026-11-28",
+   "hora": "20:30",
    "pasta": "catan-b",
    "jogo": "Catan",
    "legenda": "Comenta CATAN que eu te mando o link (publi)\nOs links das lojas estão na bio.\nNo Catan você rola os dados, junta recurso e negocia com a mesa inteira.\nQuando sai 7, quem rolou leva o ladrão pro hexágono do rival e ainda puxa uma carta dele.\nVence quem chega primeiro a 10 pontos.\nVocê roubaria do amigo que está ganhando ou do que não quis trocar?\n#catan #jogodetabuleiro #boardgame #jogosdetabuleiro #noitedejogos"
   }
  ],
  "ultimo": {
-  "pasta": "dobble-b",
-  "jogo": "Dobble"
+  "pasta": "uno-no-mercy-c",
+  "jogo": "UNO No Mercy"
  }
 }
